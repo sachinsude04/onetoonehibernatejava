@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 20 Feb, 2018 10:14:13 AM by Hibernate Tools 5.2.8.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="onetoonehibernate" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.demo.onetoonehibernate.OneToOneHibernate.model.Pancard" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="pancard">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="foreign">
+                <param name="property">person</param>
+            </generator>
+        </id>
+        
+        <property lazy="false" name="panNo" type="string" unique="false">
+            <column length="45" name="pan_no" not-null="false"/>
+        </property>
+        
+        <one-to-one class="com.demo.onetoonehibernate.OneToOneHibernate.model.Person" constrained="true" name="person"/>
+    </class>
+</hibernate-mapping>

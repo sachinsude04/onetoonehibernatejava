@@ -18,7 +18,8 @@
       <!-- Assume test is the database name -->
       
       <property name = "hibernate.connection.url">
-         jdbc:mysql://localhost:3306/onetoonehibernate
+         <!-- jdbc:mysql://localhost:3306/onetoonehibernate -->
+         jdbc:mysql://localhost:3306/onetoonehibernate?useSSL=false
       </property>
       
       <property name = "hibernate.connection.username">
@@ -30,9 +31,10 @@
       </property>
       
       <!-- List of XML mapping files -->
-      <mapping class = "com.demo.onetoonehibernate.OneToOneHibernate.model.Employee"/>
-      <mapping class = "com.demo.onetoonehibernate.OneToOneHibernate.model.Address"/>
-      <!--  com.demo.onetoonehibernate.OneToOneHibernate.model --> 
-      
+     <!-- 
+      <mapping resource = "com.demo.onetoonehibernate.OneToOneHibernate.model.Employee"/>
+      <mapping resource = "com.demo.onetoonehibernate.OneToOneHibernate.model.Employee"/> -->
+      <mapping resource="com/demo/onetoonehibernate/OneToOneHibernate/model/Pancard.hbm.xml"/>
+      <mapping resource="com/demo/onetoonehibernate/OneToOneHibernate/model/Person.hbm.xml"/>
    </session-factory>
 </hibernate-configuration>
